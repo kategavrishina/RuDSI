@@ -8,6 +8,7 @@ Depending on the parameters of graph clustering, different derivative datasets c
 
 ## Files and directories
 * `rudsi_russe18.tsv`: RuDSI in the RUSSE'18 format.
+* `annotation/`: scripts to prepare data for the annotation
 * `data/`: words and their contexts (sentences) annotated by the annotators
 * `data_join/`: all annotators' judgments in one file
 * `clusters/`: clusters (senses) automatically assigned to word usages
