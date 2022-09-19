@@ -1,42 +1,44 @@
-# Слова для датасета
+## Target words:
 
-## Таргет-слова:
+1. The total number of senses was extracted for each word in three distinct resources:
+- [Russian National Corpus (RNC)](https://ruscorpora.ru); in particular, the RNC semantic markup which includes parts of speech and semantic classes for a large number of lexemes;
+- [Wiktionary](http://www.wiktionary.org), web-based free dictionary;
+- and RuWordNet [1], a thesaurus of the Russian language created in the format of English WordNet.
+2. All non-noun words were discarded from this set.
+3. Eight most frequent words (according to the dictionary by Lyshevskaya, Sharov [2]) were selected in each of three groups: words with one sense, words with 2-4 senses, words with five or more senses.
+4. The final number of senses was calculated as the average between RNC, Wiktionary and RuWordNet for each target word.
 
-1. Для каждого слова из списка семантически размеченных лексем НКРЯ было подсчитано число значений
-2. Из списка были извлечены существительные, и для каждого из них подсчитано число значений в ruWordNet [1] и Wiktionary
-3. Для каждого из слов была подсчитана частотность в соответствии с частотным словарём современного русского языка [2]
-4. Для каждого из слов было подсчитано среднее число значений по трем источникам и затем слова были отсортированы по частотности
-5. Из итоговых данных было извлечено 24 лексемы: 8 наиболее частотных однозначных слов, 8 наиболее частотных слов с 2-4 значениями, 8 наиболее частотных слов с 5 и более значениями
 
+## Scripts
 
-## Скрипты
-
-Для установки пакетов:
+Package installation:
 `pip install -r requirements.txt`
 
-1. Получение таргет-слов
+1. Extracting target words
    
-   Команда для запуска: `python target_words.py ///`
+   CMD command: `python get_target_words.py [the RNC semantic markup] --one [number of words with one sense] --few [number of words with 2-4 senses] --many [number of words with five or more senses]`
    
-   Пример: `python target_words.py ///`
+   Example: `python get_target_words.py semantic.csv.gz --one 8 --few 8 --many 8`
 
-2. Выгрузка всех предложений, содержащих таргет-слова, из корпуса
+2. Extracting sentences with target words from RNC
    
-   Команда для запуска: `python get_sentences.py [путь к списку таргет-слов] [путь к корпусу] [путь к папке с итоговыми файлами] [приставка для названия итоговых файлов]`
+   CMD command: `python get_sentences.py [path to the list of target words] [path to the corpus] [path to the final directory] [prefix for files]`
    
-   Пример: `python get_sentences.py target_words.tsv corpus.csv.gz word_examples example`
-3. Преобразование файлов в формат DUREL
+   Example: `python get_sentences.py target_words.tsv corpus.csv.gz word_examples example`
    
-   Команда для запуска: `python json2durel.py [путь к папке с файлами json для каждого слова] [индекс grouping] [путь к папке с итоговыми файлами формата durel]`
+3. Converting to DUREL format
    
-   Пример вызова: `python json2durel.py word_examples 22 durel_files`
-4. Сэмплирование предложений для создания проекта
+   CMD command: `python json2durel.py [path to the directory with json files] [grouping id] [path to the final directory with durel files]`
    
-   Команда для запуска: `python durel_sample.py [путь к папке с файлами durel для каждого слова] [кол-во предложений на слово] [путь к папке с итоговыми файлами]`
+   Example: `python json2durel.py word_examples 22 durel_files`
    
-   Пример вызова: `python durel_sample.py durel_files 35 durel_sample`
+4. Sentence sampling for the project
+   
+   CMD command: `python durel_sample.py [path to the directory with durel files] [number of sentences per word] [path to the final directory]`
+   
+   Example: `python durel_sample.py durel_files 35 durel_sample`
 
 
-[1] Лукашевич Н.В., Лашевич Г., Герасимова А.А., Иванов В.В., Добров Б.В. Порождение тезауруса типа WordNet для русского языка // Труды конференции по искусственному интеллекту КИИ-2016, т.2., 2016. С. 89-97
+[1] Loukachevitch N. V., Lashevich G., Gerasimova A. A., Ivanov V. V., Dobrov B. V. Creating Russian WordNet by Conversion // In Proceedings of Conference on Computatilnal linguistics and Intellectual technologies Dialog-2016, 2016. pp.405-415
 
-[2] О. Н. Ляшевская, С. А. Шаров, Частотный словарь современного русского языка (на материалах Национального корпуса русского языка). М.: Азбуковник, 2009
+[2] Lyashevskaya O., Sharov S. The frequency dictionary of modern Russian language //Azbukovnik, Moscow. – 2009.
