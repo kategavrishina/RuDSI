@@ -22,6 +22,7 @@ Inter-rater agreement: 0.41 as measured by Krippendorff's alpha.
 
 [`RuDSI: graph-based word sense induction dataset for Russian`](https://aclanthology.org/2022.textgraphs-1.9/) by Anna Aksenova, Ekaterina Gavrishina, Elisey Rykov and Andrey Kutuzov (2022)
 
+```
 @inproceedings{aksenova-etal-2022-rudsi,
     title = "{R}u{DSI}: Graph-based Word Sense Induction Dataset for {R}ussian",
     author = "Aksenova, Anna  and
@@ -37,6 +38,7 @@ Inter-rater agreement: 0.41 as measured by Krippendorff's alpha.
     pages = "77--88",
     abstract = "We present RuDSI, a new benchmark for word sense induction (WSI) in Russian. The dataset was created using manual annotation and semi-automatic clustering of Word Usage Graphs (WUGs). RuDSI is completely data-driven (based on texts from Russian National Corpus), with no external word senses imposed on annotators. We present and analyze RuDSI, describe our annotation workflow, show how graph clustering parameters affect the dataset, report the performance that several baseline WSI methods obtain on RuDSI and discuss possibilities for improving these scores.",
 }
+```
 
 
 ![Word usage graph example](graph_example.png?raw=true "Word usage graph example")
