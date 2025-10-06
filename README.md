@@ -20,6 +20,8 @@ Please find more information on the provided data in the papers referenced below
 
 Version: 1.0.1, 11.1.2025. Correct target word and target sentence indices. Map judgment identifiers to use identifiers. Clean comment column. Keep excluded nodes with cluster '-1'. Regenerate graphs. Update plots. Use '.csv' file ending. 
 
+Version: 1.0.2, 06.10.2025. Use the `.tsv` file extension.
+
 # Paper
 
 [`RuDSI: graph-based word sense induction dataset for Russian`](https://aclanthology.org/2022.textgraphs-1.9/) by Anna Aksenova, Ekaterina Gavrishina, Elisey Rykov and Andrey Kutuzov (2022)
