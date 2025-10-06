@@ -11,16 +11,22 @@ Inter-rater agreement: 0.41 as measured by Krippendorff's alpha.
 * `rudsi_russe18.tsv`: RuDSI in the RUSSE'18 format.
 * `annotation/`: scripts to prepare data for the annotation
 * `data/`: words and their contexts (sentences) annotated by the annotators
-* `data_join/`: all annotators' judgments in one file
 * `clusters/`: clusters (senses) automatically assigned to word usages
 * `graphs/`: word usage graphs in the NetworkX format
 * `plots/`: visualized graphs in HTML
 * `stats/`: various statistics about RuDSI
 
+Please find more information on the provided data in the papers referenced below.
+
+Version: 1.0.1, 11.1.2025. Correct target word and target sentence indices. Map judgment identifiers to use identifiers. Clean comment column. Keep excluded nodes with cluster '-1'. Regenerate graphs. Update plots. Use '.csv' file ending. 
 
 # Paper
 
 [`RuDSI: graph-based word sense induction dataset for Russian`](https://aclanthology.org/2022.textgraphs-1.9/) by Anna Aksenova, Ekaterina Gavrishina, Elisey Rykov and Andrey Kutuzov (2022)
+
+As described in the paper below, the data was further optimized for the CoMeDi shared task. Version 1.0.1 reflects some of the changes described in the paper, i.e., correction of target word and target sentence indices, plus minor additional changes.
+
+[`The CoMeDi Shared Task: Median Judgment Classification & Mean Disagreement Ranking with Ordinal Word-in-Context Judgments`](https://aclanthology.org/2025.comedi-1.4/) by Dominik Schlechtweg, Tejaswi Choppa, Wei Zhao, Michael Roth (2025)
 
 ```
 @inproceedings{aksenova-etal-2022-rudsi,
